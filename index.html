@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>NewLeaf - Health and Wellness</title>
+  <meta name="description" content="NewLeaf is a simple health and wellness app for tracking meals, workouts, sleep, water, weight, journaling, and recipes.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --panel: #ffffff;
+      --text: #1d2320;
+      --muted: #617065;
+      --line: #d9ddd4;
+      --accent: #356b4c;
+      --accent-soft: rgba(53, 107, 76, 0.12);
+      --shadow: 0 20px 45px rgba(23, 32, 25, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(53, 107, 76, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(164, 133, 75, 0.10), transparent 24%),
+        linear-gradient(180deg, #fbfaf6 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.55), transparent 35%),
+        linear-gradient(135deg, #5e9c70, #2f6f4e);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 58ch;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+
+    .button.primary {
+      background: #1f5a3e;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(31, 90, 62, 0.22);
+    }
+
+    .button.secondary {
+      background: #eef2ec;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      padding: 28px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      background:
+        linear-gradient(180deg, rgba(53, 107, 76, 0.08), rgba(53, 107, 76, 0.03)),
+        var(--panel);
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: #fbfcfa;
+      border: 1px solid var(--line);
+    }
+
+    .mini-card h2 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .feature {
+      padding: 22px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-top: 22px;
+      padding: 18px 6px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 16px 12px 36px;
+      }
+
+      .hero-copy,
+      .hero-aside,
+      .feature {
+        padding: 20px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand" aria-label="NewLeaf">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <div>NewLeaf</div>
+          <div style="color: var(--muted); font-size: 0.92rem; font-weight: 600;">Health and Wellness</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="panel hero-copy">
+        <div class="eyebrow">Simple tracking, real insights</div>
+        <h1>Track the small things that shape your wellness.</h1>
+        <p class="lead">
+          NewLeaf helps you log as much or as little as you want, from meals and macros to sleep,
+          workouts, water, weight, journaling, and recipes. It is designed to stay simple so you can
+          focus on consistency, not complexity.
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="privacy-policy.html">Read Privacy Policy</a>
+          <a class="button secondary" href="#features">See Features</a>
+        </div>
+      </article>
+
+      <aside class="panel hero-aside">
+        <div class="mini-card">
+          <h2>Meal and macro tracking</h2>
+          <p>Keep nutrition logging quick, flexible, and easy to revisit over time.</p>
+        </div>
+        <div class="mini-card">
+          <h2>Workout tracking</h2>
+          <p>Record exercises and workouts without a cluttered interface.</p>
+        </div>
+        <div class="mini-card">
+          <h2>Recipe keeping</h2>
+          <p>Store recipes in one place with helpful tools for everyday shopping.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features" class="sections">
+      <article class="panel feature">
+        <h3>Track what matters</h3>
+        <p>Sleep, water, weight, meals, exercise, journaling, and more in one place.</p>
+      </article>
+      <article class="panel feature">
+        <h3>Simple by design</h3>
+        <p>NewLeaf keeps the essentials from similar apps while staying focused and easy to use.</p>
+      </article>
+      <article class="panel feature">
+        <h3>Built for everyone</h3>
+        <p>Flexible enough for anyone, with enough depth for people who want real tracking habits.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 NewLeaf</div>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+  </main>
+</body>
+</html>
