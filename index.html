@@ -4,31 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>NewLeaf - Health and Wellness</title>
-  <meta name="description" content="NewLeaf is a simple health and wellness app for tracking meals, workouts, sleep, water, weight, journaling, and recipes.">
+  <title>Dan Benner | Personal Projects, iOS Apps, and Mac Apps</title>
+  <meta name="description" content="Dan Benner's personal site for featured repositories, iOS apps, Mac apps, and privacy policy links for personal projects.">
   <style>
     :root {
-      --bg: #f4f1ea;
-      --panel: #ffffff;
-      --text: #1d2320;
-      --muted: #617065;
-      --line: #d9ddd4;
-      --accent: #356b4c;
-      --accent-soft: rgba(53, 107, 76, 0.12);
-      --shadow: 0 20px 45px rgba(23, 32, 25, 0.08);
+      --bg: #f4eee2;
+      --bg-2: #fbf7ef;
+      --panel: rgba(255, 252, 246, 0.88);
+      --panel-solid: #fffdf8;
+      --text: #1a201c;
+      --muted: #5d675f;
+      --line: rgba(75, 87, 78, 0.14);
+      --accent: #11483f;
+      --accent-2: #8d5a2d;
+      --accent-soft: rgba(17, 72, 63, 0.10);
+      --shadow: 0 24px 60px rgba(24, 33, 27, 0.10);
     }
 
     * { box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
       background:
-        radial-gradient(circle at top left, rgba(53, 107, 76, 0.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(164, 133, 75, 0.10), transparent 24%),
-        linear-gradient(180deg, #fbfaf6 0%, var(--bg) 100%);
+        radial-gradient(circle at top left, rgba(17, 72, 63, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(141, 90, 45, 0.12), transparent 26%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26, 32, 28, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 32, 28, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 65%);
     }
 
     a {
@@ -37,9 +56,11 @@
     }
 
     .wrap {
-      max-width: 1080px;
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 28px 20px 56px;
+      padding: 28px 20px 60px;
     }
 
     .topbar {
@@ -47,7 +68,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .brand {
@@ -61,35 +82,76 @@
     .mark {
       width: 40px;
       height: 40px;
-      border-radius: 12px;
+      border-radius: 14px;
       background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.55), transparent 35%),
-        linear-gradient(135deg, #5e9c70, #2f6f4e);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), transparent 35%),
+        linear-gradient(135deg, #1f6658, #153f37 70%, #8d5a2d);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 10px 20px rgba(17, 72, 63, 0.18);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-copy small {
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
       color: var(--muted);
-      font-size: 0.96rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+    }
+
+    .nav a:hover {
+      transform: translateY(-1px);
+      border-color: rgba(17, 72, 63, 0.24);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.82);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
       gap: 24px;
       align-items: stretch;
     }
 
     .panel {
       background: var(--panel);
+      backdrop-filter: blur(14px);
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 30px;
       box-shadow: var(--shadow);
     }
 
     .hero-copy {
-      padding: 40px;
+      padding: 42px;
     }
 
     .eyebrow {
@@ -107,14 +169,16 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      max-width: 10.5ch;
+      font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
       line-height: 1;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.065em;
     }
 
     .lead {
       margin: 18px 0 0;
-      max-width: 58ch;
+      max-width: 60ch;
       font-size: 1.08rem;
       color: var(--muted);
     }
@@ -138,13 +202,13 @@
     }
 
     .button.primary {
-      background: #1f5a3e;
+      background: linear-gradient(135deg, #184f43, #123f37);
       color: #fff;
       box-shadow: 0 10px 24px rgba(31, 90, 62, 0.22);
     }
 
     .button.secondary {
-      background: #eef2ec;
+      background: rgba(255, 255, 255, 0.8);
       color: var(--text);
       border: 1px solid var(--line);
     }
@@ -153,20 +217,47 @@
       transform: translateY(-1px);
     }
 
+    .jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(17, 72, 63, 0.24);
+      color: var(--text);
+    }
+
     .hero-aside {
-      padding: 28px;
+      padding: 24px;
       display: grid;
-      gap: 14px;
+      gap: 12px;
       align-content: start;
       background:
-        linear-gradient(180deg, rgba(53, 107, 76, 0.08), rgba(53, 107, 76, 0.03)),
+        linear-gradient(180deg, rgba(17, 72, 63, 0.08), rgba(141, 90, 45, 0.04)),
         var(--panel);
     }
 
     .mini-card {
       padding: 18px;
       border-radius: 20px;
-      background: #fbfcfa;
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--line);
     }
 
@@ -182,15 +273,43 @@
       font-size: 0.95rem;
     }
 
-    .sections {
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 60ch;
+      color: var(--muted);
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      margin-top: 22px;
     }
 
     .feature {
       padding: 22px;
+      display: grid;
+      gap: 14px;
+      min-height: 100%;
     }
 
     .feature h3 {
@@ -199,6 +318,109 @@
     }
 
     .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .app-card {
+      gap: 16px;
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      border: 1px solid rgba(75, 87, 78, 0.14);
+      object-fit: cover;
+      box-shadow: 0 12px 24px rgba(24, 33, 27, 0.12);
+      flex: none;
+      background: var(--panel-solid);
+    }
+
+    .app-card-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .feature .label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .feature .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(17, 72, 63, 0.08);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-top: 4px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .feature-link::after {
+      content: "→";
+      transition: transform 160ms ease;
+    }
+
+    .feature-link:hover::after {
+      transform: translateX(2px);
+    }
+
+    .note-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .note {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid var(--line);
+    }
+
+    .note h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .note p {
       margin: 0;
       color: var(--muted);
     }
@@ -221,8 +443,14 @@
 
     @media (max-width: 860px) {
       .hero,
-      .sections {
+      .cards,
+      .note-row {
         grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
       }
     }
 
@@ -242,6 +470,31 @@
         align-items: flex-start;
       }
 
+      .nav {
+        width: 100%;
+      }
+
+      .nav a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-copy {
+        padding: 26px 22px;
+      }
+
+      .hero-aside {
+        padding: 18px;
+      }
+
       .footer {
         flex-direction: column;
         align-items: flex-start;
@@ -252,66 +505,81 @@
 <body>
   <main class="wrap">
     <header class="topbar">
-      <div class="brand" aria-label="NewLeaf">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <div>NewLeaf</div>
-          <div style="color: var(--muted); font-size: 0.92rem; font-weight: 600;">Health and Wellness</div>
+      <div class="brand" aria-label="Dan Benner">
+        <div class="mark" aria-hidden="true">DB</div>
+        <div class="brand-copy">
+          <div>Dan Benner</div>
+          <small>Apps and privacy policy</small>
         </div>
       </div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
+        <a href="#ios-apps">iOS Apps</a>
+        <a href="#mac-apps">Mac Apps</a>
         <a href="privacy-policy.html">Privacy Policy</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <article class="panel hero-copy">
-        <div class="eyebrow">Simple tracking, real insights</div>
-        <h1>Track the small things that shape your wellness.</h1>
-        <p class="lead">
-          NewLeaf helps you log as much or as little as you want, from meals and macros to sleep,
-          workouts, water, weight, journaling, and recipes. It is designed to stay simple so you can
-          focus on consistency, not complexity.
-        </p>
-        <div class="cta-row">
-          <a class="button primary" href="privacy-policy.html">Read Privacy Policy</a>
-          <a class="button secondary" href="#features">See Features</a>
+    <section id="ios-apps" class="section">
+      <div class="section-head">
+        <div>
+          <h2>iOS apps</h2>
         </div>
-      </article>
-
-      <aside class="panel hero-aside">
-        <div class="mini-card">
-          <h2>Meal and macro tracking</h2>
-          <p>Keep nutrition logging quick, flexible, and easy to revisit over time.</p>
-        </div>
-        <div class="mini-card">
-          <h2>Workout tracking</h2>
-          <p>Record exercises and workouts without a cluttered interface.</p>
-        </div>
-        <div class="mini-card">
-          <h2>Recipe keeping</h2>
-          <p>Store recipes in one place with helpful tools for everyday shopping.</p>
-        </div>
-      </aside>
+      </div>
+      <div class="cards">
+        <article class="panel feature app-card">
+          <div class="label">Live app</div>
+          <div class="app-card-header">
+            <img class="app-icon" src="NewLeaf_AppIcon.png" alt="NewLeaf app icon" width="1024" height="1024">
+            <div class="app-card-copy">
+              <h3>NewLeaf</h3>
+              <p>A privacy-policy landing page is already in place for the app, so visitors can get to the right details quickly.</p>
+            </div>
+          </div>
+          <a class="feature-link" href="privacy-policy.html">Open privacy policy</a>
+          <div class="meta">
+            <span>iPhone</span>
+            <span>iPad</span>
+          </div>
+        </article>
+        <article class="panel feature">
+          <div class="label">Coming Soon</div>
+          <div>
+            <h3>Danksy</h3>
+            <p>Prompt Generator for art ideas. Keep library of art with their prompts. Use AR to trace pictures.</p>
+          </div>
+          <a class="feature-link" href="https://github.com/danbenner">Add App Store link</a>
+          <div class="meta">
+            <span>iPhone</span>
+            <span>iPad</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="features" class="sections">
-      <article class="panel feature">
-        <h3>Track what matters</h3>
-        <p>Sleep, water, weight, meals, exercise, journaling, and more in one place.</p>
-      </article>
-      <article class="panel feature">
-        <h3>Simple by design</h3>
-        <p>NewLeaf keeps the essentials from similar apps while staying focused and easy to use.</p>
-      </article>
-      <article class="panel feature">
-        <h3>Built for everyone</h3>
-        <p>Flexible enough for anyone, with enough depth for people who want real tracking habits.</p>
-      </article>
+    <section id="mac-apps" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Mac apps</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="panel feature">
+          <div class="label">Coming Soon</div>
+          <div>
+            <h3>CTRL</h3>
+            <p>Beat making app for kids</p>
+          </div>
+          <a class="feature-link" href="https://github.com/danbenner">Add Mac App Store link</a>
+          <div class="meta">
+            <span>macOS</span>
+            <span>Desktop</span>
+          </div>
+        </article>
+      </div>
     </section>
 
     <footer class="footer">
-      <div>© 2026 NewLeaf</div>
+      <div>© 2026 Dan Benner</div>
       <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
   </main>
