@@ -4,28 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Dan Benner | Personal Projects, iOS Apps, and Mac Apps</title>
-  <meta name="description" content="Dan Benner's personal site for featured repositories, iOS apps, Mac apps, and privacy policy links for personal projects.">
+  <title>NewLeaf Support | Dan Benner</title>
+  <meta name="description" content="Get support for NewLeaf, report bugs, browse FAQs, and send suggestions.">
   <style>
     :root {
       --bg: #f4eee2;
       --bg-2: #fbf7ef;
-      --panel: rgba(255, 252, 246, 0.88);
+      --panel: rgba(255, 252, 246, 0.90);
       --panel-solid: #fffdf8;
       --text: #1a201c;
       --muted: #5d675f;
       --line: rgba(75, 87, 78, 0.14);
       --accent: #11483f;
-      --accent-2: #8d5a2d;
       --accent-soft: rgba(17, 72, 63, 0.10);
       --shadow: 0 24px 60px rgba(24, 33, 27, 0.10);
     }
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -47,7 +44,7 @@
         linear-gradient(rgba(26, 32, 28, 0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(26, 32, 28, 0.035) 1px, transparent 1px);
       background-size: 34px 34px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 65%);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.34), transparent 65%);
     }
 
     a {
@@ -65,10 +62,10 @@
 
     .topbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .brand {
@@ -97,17 +94,6 @@
         0 10px 20px rgba(17, 72, 63, 0.18);
     }
 
-    .brand-copy {
-      display: grid;
-      gap: 2px;
-    }
-
-    .brand-copy small {
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0;
-    }
-
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -121,7 +107,7 @@
       padding: 0 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.58);
       color: var(--muted);
       font-size: 0.95rem;
       font-weight: 700;
@@ -132,12 +118,12 @@
       transform: translateY(-1px);
       border-color: rgba(17, 72, 63, 0.24);
       color: var(--text);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.85);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
       gap: 24px;
       align-items: stretch;
     }
@@ -169,16 +155,16 @@
 
     h1 {
       margin: 0;
-      max-width: 10.5ch;
+      max-width: 11ch;
       font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 6vw, 5rem);
       line-height: 1;
       letter-spacing: -0.065em;
     }
 
     .lead {
       margin: 18px 0 0;
-      max-width: 60ch;
+      max-width: 62ch;
       font-size: 1.08rem;
       color: var(--muted);
     }
@@ -217,34 +203,7 @@
       transform: translateY(-1px);
     }
 
-    .jump-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.72);
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
-      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-
-    .chip:hover {
-      transform: translateY(-1px);
-      border-color: rgba(17, 72, 63, 0.24);
-      color: var(--text);
-    }
-
-    .hero-aside {
+    .support-side {
       padding: 24px;
       display: grid;
       gap: 12px;
@@ -254,20 +213,19 @@
         var(--panel);
     }
 
-    .mini-card {
+    .support-card {
       padding: 18px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.75);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.76);
       border: 1px solid var(--line);
     }
 
-    .mini-card h2 {
+    .support-card h2 {
       margin: 0 0 6px;
       font-size: 1rem;
-      line-height: 1.25;
     }
 
-    .mini-card p {
+    .support-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
@@ -295,7 +253,7 @@
 
     .section-head p {
       margin: 0;
-      max-width: 60ch;
+      max-width: 62ch;
       color: var(--muted);
     }
 
@@ -307,45 +265,22 @@
 
     .feature {
       padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
       display: grid;
-      gap: 14px;
-      min-height: 100%;
+      gap: 10px;
     }
 
     .feature h3 {
-      margin: 0 0 8px;
+      margin: 0;
       font-size: 1.05rem;
+      letter-spacing: -0.02em;
     }
 
     .feature p {
       margin: 0;
       color: var(--muted);
-    }
-
-    .app-card {
-      gap: 16px;
-    }
-
-    .app-card-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .app-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
-      border: 1px solid rgba(75, 87, 78, 0.14);
-      object-fit: cover;
-      box-shadow: 0 12px 24px rgba(24, 33, 27, 0.12);
-      flex: none;
-      background: var(--panel-solid);
-    }
-
-    .app-card-copy {
-      display: grid;
-      gap: 4px;
     }
 
     .feature .label {
@@ -363,66 +298,33 @@
       text-transform: uppercase;
     }
 
-    .feature .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
+    .contact {
+      margin-top: 18px;
+      padding: 24px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(17, 72, 63, 0.09), rgba(141, 90, 45, 0.05)),
+        rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 12px;
     }
 
-    .meta span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 10px;
-      border-radius: 999px;
-      background: rgba(17, 72, 63, 0.08);
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 700;
+    .contact h3 {
+      margin: 0;
+      font-size: 1.1rem;
     }
 
-    .feature-link {
+    .mail-link {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       width: fit-content;
-      margin-top: 4px;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 14px;
+      background: rgba(17, 72, 63, 0.10);
       color: var(--accent);
       font-weight: 800;
-    }
-
-    .feature-link::after {
-      content: "→";
-      transition: transform 160ms ease;
-    }
-
-    .feature-link:hover::after {
-      transform: translateX(2px);
-    }
-
-    .note-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .note {
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.70);
-      border: 1px solid var(--line);
-    }
-
-    .note h3 {
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-    }
-
-    .note p {
-      margin: 0;
-      color: var(--muted);
     }
 
     .footer {
@@ -443,8 +345,7 @@
 
     @media (max-width: 860px) {
       .hero,
-      .cards,
-      .note-row {
+      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -460,8 +361,9 @@
       }
 
       .hero-copy,
-      .hero-aside,
-      .feature {
+      .support-side,
+      .feature,
+      .contact {
         padding: 20px;
       }
 
@@ -483,16 +385,9 @@
         flex-direction: column;
       }
 
-      .button {
+      .button,
+      .mail-link {
         width: 100%;
-      }
-
-      .hero-copy {
-        padding: 26px 22px;
-      }
-
-      .hero-aside {
-        padding: 18px;
       }
 
       .footer {
@@ -507,74 +402,113 @@
     <header class="topbar">
       <div class="brand" aria-label="Dan Benner">
         <div class="brand-copy">
-          <a href="index.html"><h1>Dan Benner</h1></a>
+          <a href="newleaf/newleaf-support.html"><h1>Support</h1></a>
         </div>
       </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="newleaf.html">NewLeaf</a>
+        <a href="newleaf-privacy-policy.html">Privacy Policy</a>
+      </nav>
     </header>
 
-    <section id="ios-apps" class="section">
+    <section class="hero">
+      <article class="panel hero-copy">
+        <h1>Help for bugs, questions, and feature requests.</h1>
+        <p class="lead">
+          Use this page to get help with NewLeaf, report a bug, ask a question, or send a suggestion.
+          If you need to reach the app team directly, use the temporary support email below for now.
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:newleaf.support@gmail.com">Email support</a>
+          <a class="button secondary" href="newleaf-privacy-policy.html">Privacy policy</a>
+        </div>
+      </article>
+
+      <aside class="panel support-side">
+        <div class="support-card">
+          <h2>Temporary support email</h2>
+          <p>newleaf.support@gmail.com</p>
+        </div>
+        <div class="support-card">
+          <h2>Best for</h2>
+          <p>Bug reports, account or subscription questions, and general app feedback.</p>
+        </div>
+        <div class="support-card">
+          <h2>Response path</h2>
+          <p>Send one message with the issue, what you expected, and any steps that reproduce it.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
       <div class="section-head">
         <div>
-          <h2>iOS apps</h2>
+          <h2>What to send</h2>
+          <p>Clear reports make it easier to help quickly. A little detail goes a long way.</p>
         </div>
       </div>
       <div class="cards">
-        <article class="panel feature app-card">
-          <img class="app-icon" src="newleaf/NewLeaf_AppIcon.png" alt="NewLeaf app icon" width="1024" height="1024">
-          <div class="app-card-header">
-            <div class="app-card-copy">
-              <a href="newleaf/newleaf.html"><h3><u>NewLeaf - Health and Wellness</u></h3></a>
-              <a href="newleaf/newleaf.html"><p>NewLeaf is a simple wellness app built to help you track the small details that add up over time.</p></a>
-            </div>
-          </div>
-          <a class="feature-link" href="newleaf/newleaf-privacy-policy.html">Open privacy policy</a>
-          <a class="feature-link" href="newleaf/newleaf-support.html">App support</a>
-          <div class="meta">
-            <span>iPhone</span>
-            <span>iPad</span>
-          </div>
+        <article class="feature">
+          <div class="label">Bug reports</div>
+          <h3>Tell us what went wrong</h3>
+          <p>Include the screen you were on, what happened, and what you expected to happen instead.</p>
         </article>
-        <article class="panel feature">
-          <div class="label">Coming Soon</div>
-          <div>
-            <h3>Danksy</h3>
-            <p>Prompt Generator for art ideas. Keep library of art with their prompts. Use AR to trace pictures.</p>
-          </div>
-          <a class="feature-link" href="https://github.com/danbenner">Add App Store link</a>
-          <div class="meta">
-            <span>iPhone</span>
-            <span>iPad</span>
-          </div>
+        <article class="feature">
+          <div class="label">Suggestions</div>
+          <h3>Share an idea</h3>
+          <p>If there is a feature you would like to see, describe the use case and why it would help.</p>
+        </article>
+        <article class="feature">
+          <div class="label">Questions</div>
+          <h3>Ask anything</h3>
+          <p>Subscription, lifetime access, or general app questions are all fine to send here.</p>
         </article>
       </div>
     </section>
 
-    <section id="mac-apps" class="section">
+    <section class="section">
       <div class="section-head">
         <div>
-          <h2>Mac apps</h2>
+          <h2>FAQ</h2>
+          <p>Short answers to the most likely questions while the support flow is still being built out.</p>
         </div>
       </div>
       <div class="cards">
-        <article class="panel feature">
-          <div class="label">Coming Soon</div>
-          <div>
-            <h3>CTRL</h3>
-            <p>Beat making app for kids</p>
-          </div>
-          <a class="feature-link" href="https://github.com/danbenner">Add Mac App Store link</a>
-          <div class="meta">
-            <span>macOS</span>
-            <span>Desktop</span>
-          </div>
+        <article class="feature">
+          <div class="label">FAQ</div>
+          <h3>How do I report a bug?</h3>
+          <p>Email the support address and include the steps that led to the issue if you can.</p>
+        </article>
+        <article class="feature">
+          <div class="label">FAQ</div>
+          <h3>Can I make a suggestion?</h3>
+          <p>Yes. Suggestions are welcome, especially if you can explain why the idea would help you use the app.</p>
+        </article>
+        <article class="feature">
+          <div class="label">FAQ</div>
+          <h3>Where is the privacy policy?</h3>
+          <p>The policy is linked from this page and from the NewLeaf app page for easy access.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+          <p>For now, the support inbox is the fastest way to reach the app.</p>
+        </div>
+      </div>
+      <article class="contact">
+        <h3>NewLeaf support</h3>
+        <p>Temporary email while the dedicated support setup is still being prepared.</p>
+        <a class="mail-link" href="mailto:newleaf.support@gmail.com">newleaf.support@gmail.com</a>
+      </article>
     </section>
 
     <footer class="footer">
-      <a class="feature-link" href="https://github.com/danbenner" target="_blank">Github</a>
-      <a class="feature-link" href="https://www.linkedin.com/in/dannybenner/" target="_blank">LinkedIn</a>
       <div>© 2026 Dan Benner</div>
+      <a href="newleaf-privacy-policy.html">Privacy Policy</a>
     </footer>
   </main>
 </body>
