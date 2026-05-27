@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Danksy Support | Dan Benner</title>
+  <meta name="description" content="Get support for Danksy, review FAQs, and find the current contact path.">
+  <style>
+    :root {
+      --bg: #efe6dc;
+      --bg-2: #fbf4ea;
+      --panel: rgba(255, 250, 243, 0.92);
+      --panel-solid: #fffaf3;
+      --text: #201a17;
+      --muted: #67584d;
+      --line: rgba(78, 64, 53, 0.16);
+      --accent: #8d4f2b;
+      --accent-soft: rgba(141, 79, 43, 0.10);
+      --shadow: 0 24px 60px rgba(38, 31, 26, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(141, 79, 43, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(15, 81, 87, 0.10), transparent 28%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(32, 26, 23, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(32, 26, 23, 0.035) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 65%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.42), transparent 35%),
+        linear-gradient(135deg, #b36d42, #0f5157 68%, #2e241d);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 10px 20px rgba(63, 40, 27, 0.16);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+    }
+
+    .nav a:hover {
+      transform: translateY(-1px);
+      border-color: rgba(141, 79, 43, 0.24);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 11ch;
+      font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.065em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, #a65f35, #7e4528);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(141, 79, 43, 0.22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .support-side {
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      background:
+        linear-gradient(180deg, rgba(141, 79, 43, 0.08), rgba(15, 81, 87, 0.05)),
+        var(--panel);
+    }
+
+    .support-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+    }
+
+    .support-card h2 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .support-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      display: grid;
+      gap: 10px;
+      min-height: 100%;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
+    }
+
+    .mail-link {
+      font-size: 1.05rem;
+    }
+
+    .footer {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(78, 64, 53, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 16px 12px 36px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .panel {
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <a class="brand" href="danksy.html" aria-label="Danksy home">
+        <div class="mark">DK</div>
+        <div>
+          <div>Danksy</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Danksy site navigation">
+        <a href="danksy.html">App</a>
+        <a href="danksy-privacy-policy.html">Privacy Policy</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="panel hero-copy">
+        <div class="eyebrow">Support and help</div>
+        <h1>Danksy Support</h1>
+        <p class="lead">
+          Use this page to report a bug, check the most likely questions, or find the current support path
+          for Danksy while the app is still evolving.
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:danksy.support@gmail.com">Email support</a>
+          <a class="button secondary" href="danksy-privacy-policy.html">Privacy policy</a>
+        </div>
+      </article>
+
+      <aside class="panel support-side">
+        <div class="support-card">
+          <h2>Temporary support email</h2>
+          <p>danksy.support@gmail.com</p>
+        </div>
+        <div class="support-card">
+          <h2>Best for</h2>
+          <p>Bug reports, feature requests, export questions, and camera or AR tracing issues.</p>
+        </div>
+        <div class="support-card">
+          <h2>Response tip</h2>
+          <p>Include the steps you took and, if helpful, mention whether you were in Prompt Generator, Gallery, or AR Trace.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Help / FAQ</h2>
+        </div>
+        <p>These are the common questions that come up when people first use the prompt, gallery, and tracing tools.</p>
+      </div>
+      <div class="cards">
+        <article class="panel card">
+          <h3>Where is my art stored?</h3>
+          <p>Danksy keeps your art and prompt data locally on your device unless you export it yourself.</p>
+        </article>
+        <article class="panel card">
+          <h3>How do I export art?</h3>
+          <p>Open Settings, go to Art Export, and choose a folder. Danksy will create a dated export folder for you.</p>
+        </article>
+        <article class="panel card">
+          <h3>Can I clear data?</h3>
+          <p>Yes. Settings includes clear-data actions for removing local art and prompt history from the device.</p>
+        </article>
+        <article class="panel card">
+          <h3>Do I need an account?</h3>
+          <p>No account is required. Danksy is designed to work as a local-first art tool.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+        </div>
+        <p>If you want to reach the app team directly, the temporary email below is the current support path.</p>
+      </div>
+      <article class="contact">
+        <h3>Danksy support</h3>
+        <p>Temporary email while the dedicated support setup is still being prepared.</p>
+        <a class="mail-link" href="mailto:danksy.support@gmail.com">danksy.support@gmail.com</a>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <a href="danksy-privacy-policy.html">Privacy Policy</a>
+      <a href="../index.html">Back to Home</a>
+      <a href="danksy.html">App Page</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -343,6 +343,25 @@
       background: var(--panel-solid);
     }
 
+    .danksy-mark {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 35%),
+        linear-gradient(135deg, #b36d42, #0f5157 68%, #2e241d);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      box-shadow: 0 12px 24px rgba(24, 33, 27, 0.12);
+      border: 1px solid rgba(75, 87, 78, 0.14);
+      object-fit: cover;
+      flex: none;
+    }
+
     .app-card-copy {
       display: grid;
       gap: 4px;
@@ -534,13 +553,16 @@
             <span>iPad</span>
           </div>
         </article>
-        <article class="panel feature">
-          <div class="label">Coming Soon</div>
-          <div>
-            <h3>Danksy</h3>
-            <p>Prompt Generator for art ideas. Keep library of art with their prompts. Use AR to trace pictures.</p>
+        <article class="panel feature app-card">
+          <img class="app-icon" src="danksy/Danksy_AppIcon.png" alt="Danksy app icon" width="1024" height="1024">
+          <div class="app-card-header">
+            <div class="app-card-copy">
+              <a href="danksy/danksy.html"><h3><u>Danksy - Art Prompt and AR Studio</u></h3></a>
+              <a href="danksy/danksy.html"><p>Danksy is a focused home for art prompts, saved work, and AR tracing practice.</p></a>
+            </div>
           </div>
-          <a class="feature-link" href="https://github.com/danbenner">Add App Store link</a>
+          <a class="feature-link" href="danksy/danksy-privacy-policy.html">Privacy Policy</a>
+          <a class="feature-link" href="danksy/danksy-support.html">App Support</a>
           <div class="meta">
             <span>iPhone</span>
             <span>iPad</span>
