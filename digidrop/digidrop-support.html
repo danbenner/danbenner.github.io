@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>NumberDrop | Number Game</title>
-  <meta name="description" content="NumberDrop is a fast, focused number game for quick sessions with difficulty, timer, and operation choices.">
+  <title>DigiDrop Support | Dan Benner</title>
+  <meta name="description" content="Get support for DigiDrop, review FAQs, and find the current contact path.">
   <style>
     :root {
       --bg: #eadcc8;
@@ -16,7 +16,6 @@
       --muted: #6b5c4f;
       --line: rgba(92, 76, 62, 0.16);
       --accent: #596a2d;
-      --accent-2: #7c5431;
       --accent-soft: rgba(89, 106, 45, 0.10);
       --shadow: 0 24px 60px rgba(43, 33, 25, 0.10);
     }
@@ -32,7 +31,7 @@
       line-height: 1.6;
       background:
         radial-gradient(circle at top left, rgba(124, 84, 49, 0.12), transparent 28%),
-        radial-gradient(circle at top right, rgba(89, 106, 45, 0.12), transparent 26%),
+        radial-gradient(circle at top right, rgba(89, 106, 45, 0.12), transparent 28%),
         linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
     }
 
@@ -156,16 +155,16 @@
 
     h1 {
       margin: 0;
-      max-width: 10ch;
+      max-width: 11ch;
       font-family: "Iowan Old Style", Iowan, "Palatino Linotype", Georgia, serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 6vw, 5rem);
       line-height: 1;
       letter-spacing: -0.065em;
     }
 
     .lead {
       margin: 18px 0 0;
-      max-width: 60ch;
+      max-width: 62ch;
       font-size: 1.08rem;
       color: var(--muted);
     }
@@ -195,7 +194,7 @@
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.8);
       color: var(--text);
       border: 1px solid var(--line);
     }
@@ -204,7 +203,7 @@
       transform: translateY(-1px);
     }
 
-    .hero-aside {
+    .support-side {
       padding: 24px;
       display: grid;
       gap: 12px;
@@ -214,54 +213,19 @@
         var(--panel);
     }
 
-    .app-hero {
-      display: grid;
-      grid-template-columns: 104px minmax(0, 1fr);
-      gap: 16px;
+    .support-card {
       padding: 18px;
       border-radius: 22px;
       background: rgba(255, 255, 255, 0.76);
       border: 1px solid var(--line);
-      align-items: center;
     }
 
-    .app-icon {
-      width: 104px;
-      height: 104px;
-      border-radius: 24px;
-      object-fit: cover;
-      background: var(--panel-solid);
-      border: 1px solid rgba(92, 76, 62, 0.14);
-      box-shadow: 0 12px 24px rgba(43, 33, 25, 0.12);
-      flex: none;
-    }
-
-    .app-hero h2 {
-      margin: 0;
-      font-size: 1.22rem;
-      line-height: 1.15;
-    }
-
-    .app-hero p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .mini-card {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid var(--line);
-    }
-
-    .mini-card h3 {
+    .support-card h2 {
       margin: 0 0 6px;
       font-size: 1rem;
-      line-height: 1.25;
     }
 
-    .mini-card p {
+    .support-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
@@ -295,64 +259,38 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .feature {
+    .card {
       padding: 22px;
       display: grid;
-      gap: 12px;
+      gap: 10px;
       min-height: 100%;
     }
 
-    .feature h3 {
-      margin: 0 0 8px;
+    .card h3 {
+      margin: 0;
       font-size: 1.05rem;
     }
 
-    .feature p {
+    .card p {
       margin: 0;
       color: var(--muted);
     }
 
-    .feature .label {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      min-height: 30px;
-      padding: 0 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .note-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .note {
-      padding: 20px 22px;
-      border-radius: 22px;
+    .contact {
+      padding: 22px;
+      border-radius: 24px;
       background: rgba(255, 255, 255, 0.70);
       border: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
     }
 
-    .note h3 {
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-    }
-
-    .note p {
-      margin: 0;
-      color: var(--muted);
+    .mail-link {
+      font-size: 1.05rem;
     }
 
     .footer {
@@ -369,8 +307,7 @@
 
     @media (max-width: 920px) {
       .hero,
-      .cards,
-      .note-row {
+      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -392,67 +329,49 @@
       .panel {
         border-radius: 22px;
       }
-
-      .app-hero {
-        grid-template-columns: 1fr;
-      }
-
-      .app-icon {
-        width: 92px;
-        height: 92px;
-      }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header class="topbar">
-      <div class="brand" aria-label="Dan Benner">
-        <div class="brand-copy">
-          <a href="../index.html"><h5>Dan Benner</h5></a>
-          <a href="numberdrop.html"><h1>NumberDrop</h1></a>
-        </div>
-      </div>
-      <nav class="nav" aria-label="NumberDrop site navigation">
-        <a href="numberdrop-privacy-policy.html">Privacy Policy</a>
-        <a href="numberdrop-support.html">Support</a>
+      <a class="brand" href="digidrop.html" aria-label="DigiDrop home">
+        <div class="mark">ND</div>
+        <div>DigiDrop</div>
+      </a>
+      <nav class="nav" aria-label="DigiDrop site navigation">
+        <a href="digidrop.html">App</a>
+        <a href="digidrop-privacy-policy.html">Privacy Policy</a>
         <a href="../index.html">Home</a>
       </nav>
     </header>
 
     <section class="hero">
       <article class="panel hero-copy">
-        <h2 class="eyebrow">iOS Math Game</h2>
+        <div class="eyebrow">Support and help</div>
+        <h1>DigiDrop Support</h1>
         <p class="lead">
-          NumberDrop is a quick, focused game built for short sessions. Choose a difficulty, set the clock,
-          pick an operation, and try to clear the board before time runs out.
+          Use this page to report a bug, check the most likely questions, or find the current support path
+          for DigiDrop while the app is still evolving.
         </p>
         <div class="cta-row">
-          <a class="button primary" href="numberdrop-privacy-policy.html">Privacy policy</a>
-          <a class="button secondary" href="numberdrop-support.html">Support</a>
+          <a class="button primary" href="mailto:digidrop.support@gmail.com">Email support</a>
+          <a class="button secondary" href="digidrop-privacy-policy.html">Privacy policy</a>
         </div>
       </article>
 
-      <aside class="panel hero-aside">
-        <div class="app-hero">
-          <img class="app-icon" src="NumberDrop_AppIcon.png" alt="NumberDrop app icon" width="1024" height="1024">
-          <div>
-            <h2>Quick rounds, clean controls, and a math-first menu.</h2>
-            <p>NumberDrop keeps the setup simple so you can jump straight into a round.</p>
-          </div>
+      <aside class="panel support-side">
+        <div class="support-card">
+          <h2>Temporary support email</h2>
+          <p>digidrop.support@gmail.com</p>
         </div>
-
-        <div class="mini-card">
-          <h3>Setup</h3>
-          <p>Pick difficulty, start time, and the math operation before a game begins.</p>
+        <div class="support-card">
+          <h2>Best for</h2>
+          <p>Bug reports, gameplay questions, and anything that looks off in the menu or round flow.</p>
         </div>
-        <div class="mini-card">
-          <h3>Gameplay</h3>
-          <p>Tap tiles, build the right total, and keep the score moving under the clock.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Support</h3>
-          <p>Help, privacy, and bug reports are always linked from the app and this site.</p>
+        <div class="support-card">
+          <h2>Response tip</h2>
+          <p>Include the difficulty, operation, and what you were doing when the issue happened.</p>
         </div>
       </aside>
     </section>
@@ -460,59 +379,48 @@
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>How NumberDrop plays</h2>
+          <h2>Help / FAQ</h2>
         </div>
-        <p>The app is built around short sessions, so the menu and gameplay stay simple and fast.</p>
+        <p>These are the most likely questions from the menu, gameplay, and settings flow.</p>
       </div>
       <div class="cards">
-        <article class="panel feature">
-          <div class="label">1</div>
-          <div>
-            <h3>Choose your setup</h3>
-            <p>Set the difficulty, starting time, and math operation from the menu before the round starts.</p>
-          </div>
+        <article class="panel card">
+          <h3>How do I start a game?</h3>
+          <p>Choose a difficulty, a starting time, and a math operation from the main menu, then start a round.</p>
         </article>
-        <article class="panel feature">
-          <div class="label">2</div>
-          <div>
-            <h3>Build the answer</h3>
-            <p>Tap numbers on the board and work toward the target value using the selected operation.</p>
-          </div>
+        <article class="panel card">
+          <h3>Can I change settings later?</h3>
+          <p>Yes. Adjust difficulty, time, or operation from the menu before you begin a new round.</p>
         </article>
-        <article class="panel feature">
-          <div class="label">3</div>
-          <div>
-            <h3>Beat the clock</h3>
-            <p>Keep an eye on the timer and score while you try to finish as many rounds as you can.</p>
-          </div>
+        <article class="panel card">
+          <h3>Where is my progress stored?</h3>
+          <p>DigiDrop keeps gameplay local to the device and does not use an online account or cloud save.</p>
         </article>
-        <article class="panel feature">
-          <div class="label">4</div>
-          <div>
-            <h3>Use support when needed</h3>
-            <p>The app links to FAQ, privacy, and bug reporting so help is always close by.</p>
-          </div>
+        <article class="panel card">
+          <h3>How do I send a bug report?</h3>
+          <p>Use the support email above or the hosted support link that is available from the app.</p>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <div class="note-row">
-        <article class="note">
-          <h3>Built for short bursts</h3>
-          <p>NumberDrop is meant to be a quick game you can start and stop without extra setup or account work.</p>
-        </article>
-        <article class="note">
-          <h3>Local by design</h3>
-          <p>The app keeps its experience on-device and uses hosted pages only for privacy and support links.</p>
-        </article>
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+        </div>
+        <p>If you want to reach the app team directly, the temporary email below is the current support path.</p>
       </div>
+      <article class="contact">
+        <h3>DigiDrop support</h3>
+        <p>Temporary email while the dedicated support setup is still being prepared.</p>
+        <a class="mail-link" href="mailto:digidrop.support@gmail.com">digidrop.support@gmail.com</a>
+      </article>
     </section>
 
     <footer class="footer">
-      <a href="numberdrop-privacy-policy.html">Privacy Policy</a>
-      <a href="numberdrop-support.html">Support</a>
+      <a href="digidrop-privacy-policy.html">Privacy Policy</a>
       <a href="../index.html">Back to Home</a>
+      <a href="digidrop.html">App Page</a>
     </footer>
   </main>
 </body>
